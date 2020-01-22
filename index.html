@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>Opening Client Gallery....</title>
+</head>
+<body>
+<h1>Opening Client Gallery...</h1>
+    
+<script type="text/javascript">
+//The Link Below needs to be the page where the HTML Form is embedded//
+var smugmugDomain = "https://tobieandrewsschoolphotography.smugmug.com/2020-School-Portraits";
+function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+}
+function opensmugLinkWindow(smugid)
+  	{
+		
+		
+		// The link below is the folder that's being looked into //
+		var smugmugbase = "https://tobieandrewsschoolphotography.smugmug.com/Client-Galleries/School-Sessions/2020/";
+		var smugidname = getQueryVariable("customerid");
+		
+		
+		if (smugidname  == "")
+	{
+		var smugidname = "notfound";
+		
+		
+	}
+		var URL = smugmugbase + smugidname;
+		window.location=URL;
+	
+	}
+	
+</script>
+
+<script type="text/javascript">
+getQueryVariable("mode");
+getQueryVariable("customerid");
+opensmugLinkWindow();
+    
+ 
+</script>
+</body>
+</html>
